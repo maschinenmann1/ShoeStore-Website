@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+
+@include textfield.core-styles;
+
+@font-face {
+    font-family: sanFranciscoRegular;
+    src: url('./assets/YosemiteSanFranciscoFont-master/System_San_Francisco_Display_Regular.ttf');
+}
+
+@font-face {
+    font-family: sanFranciscoBold;
+    src: url('./assets/YosemiteSanFranciscoFont-master/System\ San\ Francisco\ Display\ Bold.ttf');
+}
+
+
+@font-face {
+    font-family: sanFranciscoMedium;
+    src: url('./assets/YosemiteSanFranciscoFont-master/Text-Face-alternate/System\ San\ Francisco\ Text\ Medium.ttf');
+}
+
+body{
+    font-family: sanFranciscoRegular;
+}
+
+.color-fondo{
+    background-color: rgba(8, 8, 26, 0.8) !important;
+}
+
+.cuerpo{
+    background: linear-gradient(white, white, rgb(204, 204, 204));
+}
+
+app-admin-bar{
+    z-index: 1;
+    border-radius: 20px;
+    top: 85px;
+}
+
+@media screen and (max-width: 475px) {
+    app-admin-bar{
+        border-radius:0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #393948;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #262633;
+}

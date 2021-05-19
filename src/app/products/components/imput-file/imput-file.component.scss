@@ -1,0 +1,33 @@
+.input-custom{
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.border-custom-left{
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+
+.border-custom-right{
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+
+.input-custom:focus{
+    transition: all .1s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    background-color: rgb(226, 226, 226);
+    box-shadow: none;
+}
+
+button{
+    border: none;
+    background-color: rgb(164, 164, 255);
+}
+
+button:hover{
+    background-color: rgb(139, 139, 255);
+}

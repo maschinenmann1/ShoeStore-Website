@@ -1,0 +1,7 @@
+<div>
+    <i *ngFor="let item of filledStars" class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt" *ngIf="hasHalfStar"></i>
+    <i *ngFor="let item of emptyStars" class="far fa-star"></i>
+    {{rating | number: '0.0-1'}} 
+    <!-- | number: '0.0-1' -->
+  </div>

@@ -1,0 +1,1 @@
+export { EditProductsComponent } from './edit-products.component';

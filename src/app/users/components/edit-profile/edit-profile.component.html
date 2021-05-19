@@ -1,0 +1,101 @@
+<div class="pb-5">
+
+    <div class="titleBg">
+        <h1>Edita tu información</h1>
+    </div>
+
+    <form class="container-xl needs-validation" [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
+        <a class="h2 atras"><i class="fas fa-arrow-circle-left m-3" (click)="goBack()"></i></a>
+        <div class="d-flex justify-content-center">
+            <div *ngIf="success" class="w-75 mt-4 alert alert-success text-center" role="alert">
+                Información editada correctamente
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div *ngIf="generalError" class="w-75 mt-4 alert alert-danger text-center" role="alert">
+                Ha ocurrido un error, revise el formulario
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="p-4 col-12 col-sm-4">
+                <label class="d-block">Nombre:</label>
+                <input type="text" class="form-control" 
+                        [ngClass]="getValidityClass(editProfileForm.get('name'))"
+                        placeholder="Nombre" id="nombre" formControlName="name">
+                    
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Nombre es obligatorio
+                </div>
+            </div>
+
+            <div class="p-4 col-12 col-sm-4">
+                <label class="d-block">Apellidos: </label>
+                <input type="text" class="form-control"
+                        [ngClass]="getValidityClass(editProfileForm.get('lastname'))"
+                        placeholder="Apellidos" id="apellidos" formControlName="lastname">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Apellido es Obligatorio
+                </div>
+            </div>
+            
+            <div class="p-4 col-12 col-sm-4">
+                <label class="d-block">Email: </label>
+                <input type="mail" class="form-control"
+                        [ngClass]="getValidityClass(editProfileForm.get('email'))"
+                        placeholder="Email" id="email" formControlName="email">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    <div *ngIf="editProfileForm.get('email').invalid && 
+                            (editProfileForm.get('email').dirty || editProfileForm.get('email').touched)">
+                        <div *ngIf="editProfileForm.get('email').errors.required">El email es obligatorio</div>
+                        <div *ngIf="editProfileForm.get('email').errors.email">Email inválido</div>
+                        <div *ngIf="editProfileForm.get('email').errors.emailTaken as error">{{error}}</div>
+                    </div>
+                </div>   
+            </div>      
+            
+        </div>
+
+
+        <app-direction formControlName="address"></app-direction>
+    
+        <div class="row">
+            <div class="p-4 col-12">
+                <label class="d-block">Teléfono:  </label>
+                <input type="tel" class="form-control" 
+                        [ngClass]="getValidityClass(editProfileForm.get('phone'))"
+                        id="phone" placeholder="Teléfono" formControlName="phone">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    <div *ngIf="editProfileForm.get('phone').invalid && 
+                            (editProfileForm.get('phone').dirty || editProfileForm.get('phone').touched)">
+                        <div *ngIf="editProfileForm.get('phone').errors.required">El teléfono es obligatorio</div>
+                        <div *ngIf="editProfileForm.get('phone').errors.maxlength || editProfileForm.get('phone').errors.minlength">Debe ser de long 9</div>
+                        <div *ngIf="editProfileForm.get('phone').errors.pattern">Debe empezar por 6 o 7</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="w-25 mt-3 mb-5">Editar</button>
+        </div>
+
+    </form>
+    
+</div>

@@ -1,0 +1,53 @@
+<div class="ml-3 pr-3">
+<!-- 
+  <div class="mt-4">
+    <carousel [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="singleSlideOffset"
+          [noWrap]="!noWrap"
+          [interval]="5000"
+          [startFromIndex]="5"
+          (slideRangeChange)="onSlideRangeChange($event)">
+  <slide *ngFor="let slide of slides; let index=index">
+    <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+    <div class="carousel-caption">
+      <h4>Slide {{index}}</h4>
+    </div>
+  </slide>
+</carousel>
+  </div> -->
+    <div class="mt-4">
+    <carousel [isAnimated]="true" [showIndicators]="false">
+      <slide>
+        <img src="https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+GuideC/O https://placeholder.com/" 
+              alt="first slide" class="d-block w-100">
+      </slide>
+      <slide>
+        <img src="https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+GuideC/O https://placeholder.com/" 
+              alt="second slide" class="d-block w-100">
+      </slide>
+      <slide>
+        <img src="https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+GuideC/O https://placeholder.com/" 
+              alt="second slide" class="d-block w-100">
+      </slide>
+    </carousel>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-sm-4 mt-4">
+        <img class="sombra d-block w-100 grow" src="https://static.nike.com/a/images/f_auto/dpr_1.0/w_1311,c_limit/20509994-3436-4b88-a295-34936ead0fc7/site-oficial-de-nike.jpg" alt="muestra">
+      </div>
+      <div class="col-12 col-sm-4 mt-4">
+        <img class="sombra d-block w-100 grow" src="https://static.nike.com/a/images/f_auto/dpr_1.0/w_1311,c_limit/20509994-3436-4b88-a295-34936ead0fc7/site-oficial-de-nike.jpg" alt="muestra">
+      </div>    
+      <div class="col-12 col-sm-4 mt-4">
+        <img class="sombra d-block w-100 grow" src="https://static.nike.com/a/images/f_auto/dpr_1.0/w_1311,c_limit/20509994-3436-4b88-a295-34936ead0fc7/site-oficial-de-nike.jpg" alt="muestra">
+      </div>    
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn mt-4 text-white color-fondo grow" 
+                style="border:none; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;" 
+                  id="verMas" routerLink="/products" routerLinkActive="activebutton">VER MAS</button>
+    </div>
+
+</div>

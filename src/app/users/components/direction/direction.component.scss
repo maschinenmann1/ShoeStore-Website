@@ -1,0 +1,38 @@
+input, select{
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+input:focus{
+    border: none;
+}
+
+label{
+    cursor: pointer;
+}
+
+
+input:focus, select:focus{
+    transition: all .5s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    background-color: rgb(226, 226, 226);
+    box-shadow: none;
+}
+
+.valid-feedback, .invalid-feedback{
+    margin-top: 10px;
+    font-family:sanFranciscoMedium;
+}
+
+
+
+input:disabled, select:disabled{
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.is-invalid:focus, .is-valid:focus{
+    box-shadow: none;
+}

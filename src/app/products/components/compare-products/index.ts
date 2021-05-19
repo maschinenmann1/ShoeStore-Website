@@ -1,0 +1,1 @@
+export { CompareProductsComponent } from './compare-products.component';

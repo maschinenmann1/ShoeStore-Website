@@ -1,0 +1,65 @@
+.profile-body{
+    position: relative;
+    border-radius: 10px; 
+    background: linear-gradient(to bottom right, #E7E7E7 , rgba(128,128,128,.25));
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    z-index: 1;
+}
+
+h1{
+    font-family: sanFranciscoBold;
+    z-index: 0;
+}
+
+.edit{
+    border: none;
+    background: none;
+}
+
+i{
+    color:rgb(48, 53, 99);
+}
+
+
+button{
+    transition: all .1s;
+    border: none;
+    height: 40px;
+    background-color: rgb(164, 164, 255);  
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.mostador:focus{
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    box-shadow: none;
+}
+
+.mostador:hover{
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(139, 139, 255);
+}
+
+
+i:hover{
+    color: rgb(91, 99, 177);
+}
+
+.titleBg {
+    min-height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width:991px) {
+    .profile-body{
+        border-radius: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

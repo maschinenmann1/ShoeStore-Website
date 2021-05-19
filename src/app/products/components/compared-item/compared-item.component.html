@@ -1,0 +1,19 @@
+<div *ngIf="(item$ | async) as item">
+    <img [src]="item.imgSrc" class="img-fluid"  alt="zapatilla">
+    <h2 class="h3 mt-3"><strong>{{item.name}}</strong></h2>
+    <h3 class="h4 my-2 d-block"><b>{{item.price}}€</b></h3>
+    <h3 class="h4 mt-3 d-block"><b>Colores</b></h3>
+    <ul>
+        <ng-container *ngFor="let color of colorList">
+            <ng-container *ngFor="let itemColor of item.colors; index as i">
+                <li class="h5" *ngIf="item.colors[i]===color.key">{{color.value}}</li>
+            </ng-container>    
+        </ng-container>
+    </ul>
+    <h3 class="h4 mt-3 d-block"><b>Tallas</b></h3>
+    <ul>
+        <li class="h5" *ngFor="let size of item.size">{{size}}</li>
+    </ul>
+    <h3 class="h4 mt-2"><b>Descripción</b></h3>
+    <p class="h5 mt-1 mb-5">{{item.descriptionLong}}</p>
+</div>

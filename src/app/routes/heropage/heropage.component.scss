@@ -1,0 +1,40 @@
+
+.parallax {
+    background: 
+    linear-gradient(
+        hsla(0, 0, 0, .75),
+        hsla(0, 0, 0, .75)
+    ),
+    url("https://images.squarespace-cdn.com/content/v1/5e3b10f39be29e21e4fd479f/1580957343599-SCJMIYQST34VPXVR2A6H/ke17ZwdGBToddI8pDm48kEYqntEjT2cX4Gmv5qtoavV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTKAvv8mX_SK564nk4DTfOPKcnuaZ7Uw7cjcp1wW3dEKugdLm9Kl3JNNhOldnuaoZw/IMG_6830.jpg?format=1500w"),;
+    filter: grayscale(50%);
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    font-family: sanFranciscoBold !important;
+    letter-spacing: 5px;
+    color: white;
+    font-size: 4rem;
+}
+
+
+
+@media only screen and (max-width: 450px) {
+    .title{
+        font-family: sanFranciscoBold;
+        letter-spacing: 5px;
+        color: white;
+        font-size: 3rem;
+    }   
+    #contenido {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    } 
+}

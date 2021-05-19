@@ -1,0 +1,30 @@
+<div class="container-lg pt-5">
+    <h1 class="text-center">Manage Products</h1> 
+    <div class="table-responsive">
+        <table class="table mt-5">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="text-center">Id</th>
+                <th scope="col" class="text-center">Name</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Description</th>
+                <th scope="col" class="text-center">Large description</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="bg-light">
+                <tr *ngFor="let item of products$ | async" >
+                    <th scope="row" class="align-middle text-center">{{item.id}}</th>
+                    <td class="align-middle text-center">{{item.name}}</td>
+                    <td class="align-middle text-center">{{item.price}}€</td>
+                    <td class="align-middle text-center">{{item.colors}}</td>
+                    <td class="align-middle text-center">{{item.descriptionLong}}</td>
+                    <td class="align-middle">
+                        <button class="w-100 btn-secondary btn" routerLink="../manage-products/{{item.id}}">Edit</button>
+                        <button class="w-100 mt-3 btn-danger btn" (click)="removeProduct(item.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</div>

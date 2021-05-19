@@ -1,0 +1,1 @@
+export { ImputFileComponent } from './imput-file.component';

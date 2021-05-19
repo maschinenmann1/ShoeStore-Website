@@ -1,0 +1,37 @@
+
+<h1 class="py-5 text-center title">Cart</h1>
+
+<div *ngIf="products$ | async as products; else cartEmpty">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-12 col-lg-8 mb-5">
+        <app-cart-item *ngFor="let item of products" [itemID]="item.id"></app-cart-item>
+      </div>
+
+      <div class="col-12 col-lg-4 noSpace">
+        <div class="mx-3 mb-3 p-3 cuerpoInfo">
+          <div *ngIf="products.length > 0; else cartEmpty">
+            <h4 class="mb-3">Order info</h4>
+            <div class="h5 d-flex justify-content-between text-secondary"> <span>Subtotal</span> <span>{{ products | totalPrice | number: '0.0-2' }}€</span> </div>
+            <div class="h5 mb-3 d-flex justify-content-between text-secondary"> <span>Gastos de envío</span> <span> {{gastosEnvio}}€</span></div>
+            <div class="h5 d-flex justify-content-between"> <span class="text-secondary">Total</span> <strong>{{ (products | totalPrice : gastosEnvio | number: '0.0-2') }}€</strong></div>
+            <button type="button" class="btn mt-3 btn-success btn-block mb-3" (click)="purchase()">Purchase</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<ng-template #cartEmpty class="d-flex align-items-center justify-content-center">
+  <h4 class="text-center">Your cart is empty</h4>
+</ng-template>
+
+
+
+
+

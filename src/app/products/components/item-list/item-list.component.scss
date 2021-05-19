@@ -1,0 +1,107 @@
+app-item {
+    margin-top: 20px;
+
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+}
+
+app-item:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+h1{
+    font-family: sanFranciscoBold;
+}
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: auto 33%;
+    grid-template-rows:auto;
+}
+
+#lista {
+    display: grid;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-right: 40px;
+    grid-template-rows: 420px 420px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+
+
+
+
+
+.parallax {
+    background: 
+    linear-gradient(
+        hsla(0, 0, 0, .75),
+        hsla(0, 0, 0, .75)
+    ),
+    url("https://www.topcomparativas.com/wp-content/uploads/2019/07/Las-mejores-zapatillas-deportivas-para-ni%C3%B1os.jpg"),;
+    min-height: 300px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width:989px) {
+
+    .contenedor{
+        display: grid;
+        grid-template-columns:auto;
+        grid-template-rows:auto;
+    }
+
+    #lista {
+        grid-template-rows: 450px 450px;
+
+    }
+
+}
+
+//99 de dif
+@media screen and (max-width:850px) {
+
+    #lista {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .contenedor{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows:auto;
+    }
+    
+
+
+
+}
+
+
+@media screen and (max-width:669px) {
+
+    app-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    #lista {
+   
+        grid-template-columns: 1fr;
+
+    }
+
+}
+

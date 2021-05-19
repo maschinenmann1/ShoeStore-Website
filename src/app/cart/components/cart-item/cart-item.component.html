@@ -1,0 +1,42 @@
+<div *ngIf="(product$ | async) as item; else loadingProduct" >
+    <hr>
+    <div class="row">
+        <div class="col-lg-4 col-12">
+            <img [src]="item.product.imgSrc" alt="product" class="img-fluid">
+        </div>
+        <div class="col-lg-8 col-12 p-5">
+            <div class="d-flex justify-content-between" style="border-bottom: 1px solid #DDD;">
+                <h4>{{item.product.name}}</h4>
+                <button type="button" (click)="removeItemFromCart(item)" class="btn btn-sm float-right"><i class="fas fa-trash-alt hover"></i></button>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between">
+                <div class="text-secondary mt-2">
+                    
+                    <div>color: {{colorList[0].value}}</div>
+                    <div class="my-3">talla: {{item.product.size}}</div>
+                </div>
+                <div class="text-center mt-2">
+                    <span class="text-secondary">{{item.product.price}}€</span>
+                    <div class="input-group my-2 input-group-sm">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-secondary btn-sm" (click)="addToCart(item.product)"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="form-control">{{item.qty}}</div>
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary btn-sm" [disabled]="item.qty==0" (click)="reduceByOneItemQuantity(item)" ><i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <strong>{{item.product | totalProductPrice: item.qty | number: '0.0-2'}} €</strong> <!--: 'es-ES'-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loadingProduct>
+    <div class="w-100 d-flex justify-content-center align-items-center">
+        <i class="fa fa-fw fa-spinner fa-pulse" aria-hidden="true"></i>
+    </div>
+</ng-template>

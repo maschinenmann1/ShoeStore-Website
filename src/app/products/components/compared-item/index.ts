@@ -1,0 +1,1 @@
+export { ComparedItemComponent } from './compared-item.component';

@@ -1,0 +1,71 @@
+select, button{
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+label{
+    cursor: pointer;
+}
+
+.cuerpoForm{
+    border-radius: 10px; 
+    background: linear-gradient(to bottom right, #E7E7E7 , rgba(128,128,128,.25));
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+button{
+    transition: all .5s;
+    border: none;
+    height: 40px;
+    background-color: rgb(164, 164, 255);  
+}
+
+button:focus{
+    transition: all .1s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    box-shadow: none;
+}
+
+select:focus{
+    transition: all .1s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    background-color: rgb(226, 226, 226);
+    box-shadow: none;
+}
+
+button:hover{
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(139, 139, 255);
+}
+
+i{
+    color: rgb(139, 139, 255);
+}
+
+i:hover{
+    color:rgb(77, 77, 255);
+}
+
+
+
+@media screen and (max-width:500px) {
+    .cuerpoForm{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .noSpace{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+}
+
+@media screen and (max-width:991px) {
+    .cuerpoForm{
+        border-radius: 0;
+    }
+}

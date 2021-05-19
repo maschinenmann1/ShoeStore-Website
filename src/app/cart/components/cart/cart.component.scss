@@ -1,0 +1,52 @@
+h1{
+    font-family: sanFranciscoBold;
+}
+
+
+.cuerpoInfo{
+    border-radius: 10px; 
+    background: linear-gradient(to bottom right, #E7E7E7 , rgba(128,128,128,.25));
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+button{
+    transition: all .5s;
+    border: none;
+    height: 40px;
+    background-color: rgb(164, 164, 255);  
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+button:focus{
+    transition: all .1s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    box-shadow: none;
+}
+
+button:hover{
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(139, 139, 255);
+}
+
+@media screen and (max-width:500px) {
+    .cuerpoInfo{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .noSpace{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .cuerpoInfo{
+        border-radius: 0;
+    }
+}
+

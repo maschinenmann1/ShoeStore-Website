@@ -1,0 +1,10 @@
+<figure *ngIf="(product$ | async) as item"
+            routerLink="/products/{{item.id}}" routerLinkActive="activebutton">
+    <img [src]="item.imgSrc" class="img-fluid"  alt="zapatilla">
+    <figcaption class="mt-5">
+        {{item.name}} <br>
+        <span class="text-secondary">Zapatillas - {{item.section}}</span> <br>
+        <span class="text-secondary">{{item.colors.length}} colores</span> <br>
+        <b>{{item.price}}€</b>
+    </figcaption>
+</figure>

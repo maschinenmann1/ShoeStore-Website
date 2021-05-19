@@ -1,0 +1,29 @@
+<!-- <div class="container-lg d-flex justify-content-center">
+  <app-admin-bar class="position-fixed color-fondo"></app-admin-bar>
+</div> -->
+
+<div class="container-lg pt-5">
+    <h1 class="text-center">Manage Admins</h1>
+    <div class="table-responsive">
+      <table class="table mt-5">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col" class="text-center">Name</th>
+            <th scope="col" class="text-center">Lastname</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="bg-light">
+            <tr *ngFor="let user of users$ | async as list; let i = index;"> <!--trackBy: trackByEmail--> 
+                <th scope="row" class="align-middle text-center">{{i+1}}</th>
+                <td class="align-middle text-center">{{user.name}}</td>
+                <td class="align-middle text-center">{{user.lastname}}</td>
+                <td class="align-middle text-center">{{user.email}}</td>
+                <td><button class="w-100 {{user.admin ? 'btn-danger' : 'btn btn-primary'}} btn" (click)="makeAdmin(user)">{{user.admin ? 'Make user' : 'Make admin'}}</button></td>
+            </tr>
+        </tbody>
+    </table>    
+    </div>
+  </div>

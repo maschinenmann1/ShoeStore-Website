@@ -1,0 +1,1 @@
+export { ManageAdminComponent } from './manage-admin.component';

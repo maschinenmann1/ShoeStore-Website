@@ -1,0 +1,11 @@
+<div class="card my-5 mx-3">
+    <div class="card-header d-flex justify-content-around align-items-center">
+        <h5 style="font-size: larger;">{{comment.user}}</h5>
+        <app-stars style="font-size: larger;" [comments]='[comment]'></app-stars>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p style="font-size: large;" >{{comment.review}}</p>
+      </blockquote>
+    </div>
+</div>

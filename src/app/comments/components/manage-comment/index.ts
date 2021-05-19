@@ -1,0 +1,1 @@
+export { ManageCommentComponent } from './manage-comment.component';

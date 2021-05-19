@@ -1,0 +1,159 @@
+
+#button{
+    display: none;
+}
+
+.cuerpoForm{
+    border-radius: 10px; 
+    background: linear-gradient(to bottom right, #E7E7E7 , rgba(128,128,128,.25));
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.check-font{
+    font-size: 1.2rem;
+}
+
+
+
+.grid-input{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:auto;
+}
+
+input[type=checkbox]{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.check-grid{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.section-grid{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#submitButton:hover{
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(139, 139, 255);
+}
+
+#submitButton{
+    transition: all .5s;
+    border: none;
+    height: 40px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: rgb(164, 164, 255);  
+}
+
+#submitButton:focus{
+    transition: all .1s;
+    outline:none;
+    border: 2px solid rgb(98, 98, 134);
+    box-shadow: none;
+}
+
+.filtrar:hover{
+    outline:none;
+    box-shadow: none;
+    background-color: rgb(139, 139, 255);
+}
+
+.filtrar{
+    transition: all .5s;
+    border: none;
+    height: 40px;
+    height: 35px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: rgb(164, 164, 255);  
+}
+
+i{
+    font-size: xx-large;
+}
+
+li:hover{background-color: rgb(199, 199, 199);}
+
+#sideBar{
+    color: black;
+}
+
+label, input{
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:989px) {
+
+    #button{
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 10px;
+        z-index: 4;
+        background-color: rgba(81, 81, 122, 0.8);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: 200;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    #sideBar{
+        overflow:scroll;
+        overflow-x:hidden;
+        position: fixed;
+        top: 50px; 
+        left: 0;
+        height: 100vh;
+        background-color: rgba(70, 70, 97, 0.8);
+        width: 0;
+    }
+    
+    *{color: white;}
+    
+    #button:hover{
+        color: rgba(34, 34, 46, 0.8);
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    
+    }
+    ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    
+    }
+    ::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167); 
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background: rgb(112, 112, 112); 
+    }
+    .check-font{
+        font-size: 1rem;
+    }
+
+    .cuerpoForm{
+        border-radius:0; 
+        background:none;
+        box-shadow:none;
+    }
+}
+
+
+
+
+

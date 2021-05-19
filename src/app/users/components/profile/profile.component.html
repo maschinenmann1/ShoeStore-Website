@@ -1,0 +1,35 @@
+<div class="titleBg">
+    <h1>Perfil</h1>
+</div>
+<div class="container-xl profile-body p-5 mb-5">
+    <div class="row">
+    
+        <div class="col-12 col-lg-4">
+            <button type="button" class="btn mostador my-2 w-100" (click)="infoIsCollapsed = !infoIsCollapsed"
+                        [attr.aria-expanded]="!infoIsCollapsed" aria-controls="info">Tu Información
+            </button> <br>
+            <button type="button" class="btn mostador my-2 w-100" (click)="shopHIsCollapsed = !shopHIsCollapsed"
+                        [attr.aria-expanded]="!shopHIsCollapsed" aria-controls="shopHistory">Tu historial de compra
+            </button>
+        </div>
+        <div class="col-lg-2 w-100"></div>
+        <div id="info" [collapse]="infoIsCollapsed" [isAnimated]="true" class="col-12 col-lg-6">
+            <h3 class="">Contacto <button type="button" routerLink="/users/profile/edit" class="edit"><i class="fas fa-edit"></i></button></h3>
+            <hr>
+            <div class="h5 my-1"><b>Nombre:</b> {{user.activeUser.name}} </div>
+            <div class="h5 my-1"><b>Apellido:</b> {{user.activeUser.lastname}} </div>
+            <div class="h5 my-1"><b>Email:</b> {{user.activeUser.email}} </div>
+            <div class="h5 my-1"><b>Teléfono:</b> {{user.activeUser.phone}}</div>
+            <h3 class="mt-3 mb-2">Dirección</h3>
+            <hr>
+            <div class="h5 my-1"><b>País:</b> {{user.activeUser.address.country}}</div>
+            <div class="h5 my-1"><b>Ciudad:</b> {{user.activeUser.address.city}}</div>
+            <div class="h5 my-1"><b>Código postal:</b> {{user.activeUser.address.zipCode}}</div>
+            <div class="h5 my-1"><b>Dirección:</b> {{user.activeUser.address.direction}}</div>
+        </div>
+        <div id="shopHistory" [collapse]="shopHIsCollapsed" [isAnimated]="true" class="col-12 col-lg-6">
+            <h2>Historial de compra</h2>
+        </div>
+
+    </div>
+</div>

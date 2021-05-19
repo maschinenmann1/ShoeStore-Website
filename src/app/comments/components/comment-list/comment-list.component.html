@@ -1,0 +1,16 @@
+<div class="comment-zone">
+    <hr>
+    <h3 class="text-center" style="margin-top: 32px;">Comentarios:</h3>
+    <div class="write-comment">
+        <app-send-comment *ngIf="isLogged" [item]="item"></app-send-comment>
+    </div>
+    <div class="comments">
+        <div *ngFor="let item of approvedComments">
+            <app-comment [comment]="item"></app-comment>
+        </div>
+    </div>
+    <div *ngIf="!approvedComments.length">
+        <hr>
+        <h3 class="text-center">No comments</h3>
+    </div>
+</div>

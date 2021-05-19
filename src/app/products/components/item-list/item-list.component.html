@@ -1,0 +1,24 @@
+<div class="parallax container-fluid">
+    <h1 class="" style="font-size: 3rem; color: white;">Zapatillas</h1>
+</div>
+
+
+
+<div class="contenedor">
+
+    <div id="lista">
+        <app-item *ngFor="let item of productsPerPage$ | async" [itemID]="item.id" class="p-3" appReplaceTag></app-item>
+    </div>
+
+    <div id="menu">
+        <app-sidebar (filterEvent)="listFilteredProducts($event)" style="z-index: 4;"></app-sidebar>
+    </div> 
+
+</div>
+
+
+<div class="d-flex justify-content-center m-5" style="z-index: 1;" *ngIf="(products$ | async) as products">
+    <pagination [boundaryLinks]="true" [totalItems]="products.length" previousText="&lsaquo;" nextText="&rsaquo;"
+        (pageChanged)="pageChanged($event)" [itemsPerPage]="itemsPerPage" firstText="&laquo;" lastText="&raquo;">
+    </pagination>
+</div>

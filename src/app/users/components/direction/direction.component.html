@@ -1,0 +1,85 @@
+<form [formGroup]="direcForm" class="row">
+    <div  class="p-4 col-12 col-sm-4">
+        <label class="d-block">País: </label>
+        <select id="country" class="custom-select"
+                [ngClass]="getValidityClass(direcForm.get('country'))"
+                formControlName="country">
+            <option value="">elige una opción</option>
+            <option value="spain">España</option>
+            <option value="france">Francia</option>
+            <option value="italy">Italia</option>
+        </select>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            País es obligatorio
+        </div>
+    </div>
+    
+    <div class="p-4 col-12 col-sm-4">
+        <label class="d-block">Provincia: </label>
+        <select id="province" class="custom-select" 
+                [ngClass]="getValidityClass(direcForm.get('province'))"
+                formControlName="province">
+            <option value="">elige una opción</option>
+            <option *ngFor="let item of arrProvinces" [value]="item.CodigoProvincia">{{item.Nombre}}</option>
+        </select>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Provincia es obligatoria
+        </div>
+    </div>
+
+    <div class="p-4 col-12 col-sm-4">
+        <label class="d-block">Ciudad </label>
+        <input type="text" class="form-control" id="city"
+                [ngClass]="getValidityClass(direcForm.get('city'))" 
+                placeholder="City" formControlName="city">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Ciudad es obligatoria
+        </div>
+    </div>
+
+    <div class="p-4 col-12 col-sm-3">
+        <label class="d-block">CP: </label>
+        <input type="text" class="form-control"
+                [ngClass]="getValidityClass(direcForm.get('zipCode'))"
+                placeholder="Zip code" formControlName="zipCode">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            <div *ngIf="direcForm.get('zipCode').invalid && 
+                    (direcForm.get('zipCode').dirty || direcForm.get('zipCode').touched)">
+                <div *ngIf="direcForm.get('zipCode').errors.required">El CP es obligatorio</div>
+                <ng-container *ngIf="direcForm.get('zipCode').errors.zipCodeError">
+                    <div *ngIf="direcForm.get('zipCode').errors.zipCodeError.wrongProvince">CP erroneo</div>
+                    <div *ngIf="direcForm.get('zipCode').errors.zipCodeError.length">long debe ser 5</div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4 col-12 col-sm-9">
+        <label class="d-block">Dirección: </label>
+        <input type="text" class="form-control" 
+                [ngClass]="getValidityClass(direcForm.get('direction'))"
+                placeholder="Direction" formControlName="direction">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Dirección es obligatoria
+        </div>
+    </div>
+
+</form>
+
+
+

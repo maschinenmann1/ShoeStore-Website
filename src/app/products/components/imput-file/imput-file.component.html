@@ -1,0 +1,17 @@
+<div class="input-group input-custom">
+    <input type="file" id="fileIn" hidden #fileInput
+    [disabled]="isDisabled"
+  
+    (change)="onInput($event)" accept="image/*">
+    <div class="input-group-prepend border-custom-left">
+        <span class="input-group-text border-custom-left">
+            <img [src]="getValue" alt="img" style="max-height:1.5rem">
+        </span>
+    </div>
+    <label for="fileIn" class="form-control">
+        {{placeholder}}
+    </label>
+    <div class="input-group-append border-custom-right">
+        <button type="button" class="btn btn-primary border-custom-right" (click)="fileInput.click()" >↑</button>
+    </div>
+</div>

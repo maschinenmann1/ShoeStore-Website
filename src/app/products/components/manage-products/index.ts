@@ -1,0 +1,1 @@
+export { ManageProductsComponent } from './manage-products.component';

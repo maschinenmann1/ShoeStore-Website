@@ -1,0 +1,16 @@
+<div *ngIf="isLogged && isAdmin" class="color-fondo">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/comments/manage-comments" routerLinkActive="activebutton">Manage comments</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/users/manage-admins" routerLinkActive="activebutton">Manage admins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/products/manage-products" routerLinkActive="activebutton">Manage products</a>
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/products/create-products" routerLinkActive="activebutton">Create products</a>
+    </li>
+  </ul>
+</div>

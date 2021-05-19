@@ -1,0 +1,1 @@
+export { EditProfileComponent } from './edit-profile.component';

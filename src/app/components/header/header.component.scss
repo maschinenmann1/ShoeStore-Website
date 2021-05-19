@@ -1,0 +1,40 @@
+@media screen and (min-width: 992px) {
+    .collapse {
+        height: auto !important;
+    }
+}
+
+.borderless{
+    border: none;
+}
+
+.fondo{
+    background-color: #393948;
+}
+
+.cart-qty-desktop{
+    font-family: sanFranciscoThin;
+    font-size: smaller;
+    bottom: 17px;
+    left: 18px;
+}
+
+.icon{
+    font-size: large;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.buscPC{
+    width: 40%;
+}
+
+@media screen and (max-width:991px) {
+    .mx-5{
+        margin: 0 !important;
+    }
+}
+
+

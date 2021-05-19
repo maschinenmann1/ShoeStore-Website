@@ -1,0 +1,82 @@
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fondo">
+        <a class="navbar-brand mx-5 d-block" routerLink="/main" routerLinkActive="activebutton">ShoeStore</a>
+        <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="navbarNav"
+            [attr.ariaExpanded]="!isCollapsed" style="border:none;" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white;" aria-hidden="true"></span>
+        </button>
+
+        <div class="d-block d-lg-none navbar-collapse movileNav" @openClose *ngIf="!isCollapsed" id="navbarNav" style="overflow: hidden;">
+            <input [(ngModel)]="filterText"
+                    [typeahead]="productName$" 
+                    [isAnimated]="true"
+                    placeholder="Buscar" 
+                    typeaheadOptionField="name"
+                    (typeaheadOnSelect)="onSelect($event)" 
+                    [typeaheadScrollable]="true"
+                    [typeaheadLatinize]="true" 
+                    [typeaheadOptionsInScrollableView]="5"
+                    [typeaheadAsync]="true" 
+                    style="width: 100%;" 
+                    class="form-control mt-3 borderless">
+            <ul class="navbar-nav">
+                <li class="nav-item d-flex justify-content-between">
+                    <a class="nav-link" routerLink='/products' routerLinkActive="activebutton">Products</a>
+                    <a class="nav-link" *ngIf="logged" routerLink='/users/profile' routerLinkActive="activebutton"><i class="fas fa-user-circle icon mr-1"></i>Perfil</a>
+                    <a class="nav-link" routerLink="/cart" routerLinkActive="activebutton"><span class="position-relative cart-qty-desktop" *ngIf="cart$ | async as cart">{{ (cart$ | async) | totalQty }}</span><i class="fas fa-shopping-cart icon mr-1"></i>Carrito</a>
+                </li>
+                <li class="nav-item d-flex justify-content-between">
+                    <a class="nav-link" routerLink="/products/compare-products" routerLinkActive="activebutton">Compare Products</a>
+                    <a class="nav-link" *ngIf="logged" (click)="salir()"><i class="fas fa-sign-out-alt mr-1"></i>Salir</a> 
+                </li>
+                <li class="nav-item d-flex justify-content-between">
+                    <a class="nav-link" *ngIf="!logged" routerLink='/users/login' routerLinkActive="activebutton">Log In</a>
+                    <a class="nav-link" *ngIf="!logged" routerLink="/users/register" routerLinkActive="activebutton">Register</a>
+                </li>
+            </ul>
+
+        </div>
+        
+        <div class="navbar-collapse d-none d-lg-block">
+
+            <input [(ngModel)]="filterText"
+                    [typeahead]="productName$" 
+                    [isAnimated]="true"
+                    placeholder="Buscar" 
+                    typeaheadOptionField="name"
+                    (typeaheadOnSelect)="onSelect($event)" 
+                    [typeaheadScrollable]="true"
+                    [typeaheadLatinize]="true" 
+                    [typeaheadOptionsInScrollableView]="5"
+                    [typeaheadAsync]="true" 
+                    class="form-control buscPC borderless">
+
+            <span class="position-relative" style="right: 35px;"><i class="fas fa-search"></i></span>
+            <ul class="navbar-nav ml-auto mx-5">
+                <li class="nav-item  ml-5">
+                    <a class="nav-link" routerLink="/products" routerLinkActive="activebutton">Products</a>
+                </li>
+                <li class="nav-item  ml-5">
+                    <a class="nav-link" routerLink="/products/compare-products" routerLinkActive="activebutton">Compare Products</a>
+                </li> 
+                <li class="nav-item  ml-5" *ngIf="logged">
+                    <a class="nav-link" routerLink="/users/profile" routerLinkActive="activebutton"><i class="fas fa-user-circle icon mr-1"></i>Perfil</a>
+                </li>
+                <li class="nav-item  ml-5">
+                    <a class="nav-link" routerLink="/cart" routerLinkActive="activebutton"><span class="position-relative cart-qty-desktop" *ngIf="cart$ | async as cart">{{ (cart$ | async) | totalQty }}</span><i class="fas fa-shopping-cart icon mr-1"></i>Carrito</a>
+                </li>
+                <li class="nav-item ml-5" *ngIf="!logged">
+                    <a class="nav-link" routerLink='/users/login' routerLinkActive="activebutton">Log In</a>
+                </li>
+                <li class="nav-item  ml-5" *ngIf="!logged">
+                    <a class="nav-link" routerLink="/users/register" routerLinkActive="activebutton">Register</a>
+                </li>
+                <li class="nav-item  ml-5" *ngIf="logged">
+                    <a class="nav-link" style="cursor: pointer;" (click)="salir()"><i class="fas fa-sign-out-alt mr-1"></i>Salir</a> 
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
+

@@ -1,0 +1,76 @@
+<div class="container-fluid" *ngIf="(product$ | async) as item">
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <a class="h2 atras"><i class="fas fa-arrow-circle-left m-3" (click)="exit()"></i></a>
+            <img [src]="item.imgSrc" alt="item" class="img-fluid m-auto d-block">
+        </div>
+        
+        <div class="col-12 col-lg-4 noSpace">
+            <div class="cuerpoForm m-3 pt-3 pb-1">
+
+                <div class="my-4">
+                    <h2 class="text-center">{{item.name}}</h2>
+                    <app-stars class="text-center" style="font-size: 1.3rem;" [comments]="item.comments"></app-stars>
+                </div>
+        
+       
+
+                <form [formGroup]="itemForm" class="needs-validation" (ngSubmit)="addToCart(item)">
+                   
+                    <div class="d-flex justify-content-center">
+                        <div *ngIf="success" class="w-75 mt-4 alert alert-success text-center" role="alert">
+                            Artículo añadido correctamente
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div *ngIf="generalError" class="w-75 mt-4 alert alert-danger text-center" role="alert">
+                            Ha ocurrido un error, revise el formulario
+                        </div>
+                    </div>  
+
+                    <div class="m-3 my-5">
+                        <label for="color">Elige un color</label>
+                        <select name="color" id="color" class="custom-select" 
+                                [ngClass]="getValidityClass(itemForm.get('colors'))" 
+                                formControlName="colors">
+                            <option value="">elige un color</option>
+                            <ng-container *ngFor="let color of colorList">
+                                <ng-container *ngFor="let itemColor of item.colors; index as i">
+                                    <option *ngIf="item.colors[i]===color.key" [value]="color.key">{{color.value}}</option>
+                                </ng-container>    
+                            </ng-container>
+                            
+                        </select>
+                        <div class="invalid-feedback">
+                            Color es obligatorio
+                        </div>
+                    </div>
+                    
+                   
+
+                    <div class="m-3 my-5">
+                        <label for="size">Elige un tamaño</label>
+                        <select name="size" id="size" class="custom-select"
+                                [ngClass]="getValidityClass(itemForm.get('size'))" 
+                                formControlName="size">
+                            <option value="">elige un tamaño</option>
+                            <option *ngFor="let size of item.size" [value]="size">{{size}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Tamaño es obligatorio
+                        </div>
+                    </div>
+
+                    <div class="my-5 d-flex justify-content-center">
+                        <button type="submit" class="w-75" style="font-family: sanFranciscoBold;">{{item.price}}€</button>
+                    </div>
+                </form>
+
+                <p class="p-3" style="font-size: large;">{{item.descriptionLong}}</p>
+
+                <app-comment-list [item]="item"></app-comment-list>
+
+            </div>
+        </div>
+    </div>
+</div>
