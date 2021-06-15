@@ -18,3 +18,7 @@ h1{
 select, label{
     font-size: 1.2rem;
 }
+
+select:disabled{
+    cursor: not-allowed;
+}

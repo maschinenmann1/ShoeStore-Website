@@ -27,7 +27,7 @@ export class ItemListComponent implements OnInit {
   listFilteredProducts(item:Observable<Item[]>){
     window.scrollTo( 0, 0 );
     this.products$ = item;
-    this.productsPerPage$=this.products$;
+    this.productsPerPage$=this.products$.pipe(map(items=>items.slice(0, this.itemsPerPage)));
   }
 
   loadProducts(){

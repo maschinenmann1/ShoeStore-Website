@@ -7,7 +7,7 @@
 <div class="contenedor">
 
     <div id="lista">
-        <app-item *ngFor="let item of productsPerPage$ | async" [itemID]="item.id" class="p-3" appReplaceTag></app-item>
+        <app-item *ngFor="let item of productsPerPage$ | async" [itemID]="item.id" class="p-3" style="border-radius: 10px;" appReplaceTag></app-item>
     </div>
 
     <div id="menu">

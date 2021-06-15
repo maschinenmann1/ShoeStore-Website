@@ -1,37 +1,42 @@
 <h1 class="text-center my-5">Comparar Productos</h1>
-<form [formGroup]="compareForm" class="container-fluid">
+<form [formGroup]="compareForm" class="container-lg">
     <div class="row">
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-md-4">
             <label for="prod1">Producto 1:</label> <br>
             <select id="prod1" class="form-control" 
-                    (ngModelChange)="goTo('item1', compareForm.get('item1').value)"
+                
                     formControlName="item1">
                 <option value="">Selecciona Producto</option>
                 <option *ngFor="let item of products$ | async" [value]="item.id">{{item.name}}</option>
             </select>
-                <router-outlet name="item1"></router-outlet> <!--[itemID]="compareForm.get('item1').value"-->
+            <app-compared-item *ngIf="compareForm.get('item1').value!=''" [itemID]="compareForm.get('item1').value"></app-compared-item>
+            
+                <!-- <router-outlet name="item1"></router-outlet> -->
         </div>
 
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-md-4">
             <label for="prod2">Producto 2:</label> <br>
-            <select id="prod2" class="form-control"
-                    (ngModelChange)="goTo('item2', compareForm.get('item2').value)"
+            <select id="prod2" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Selecciona Producto 1 para habilitar este campo"
+                    
                     formControlName="item2">
                 <option value="">Selecciona Producto</option>
                 <option *ngFor="let item of products$ | async" [value]="item.id">{{item.name}}</option>
             </select>
-            <router-outlet name="item2"></router-outlet>
+            <app-compared-item *ngIf="compareForm.get('item2').value!=''" [itemID]="compareForm.get('item2').value" ></app-compared-item>
+            <!-- <router-outlet name="item2"></router-outlet> -->
         </div>
 
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-md-4">
             <label for="prod3">Producto 3:</label> <br>
-            <select id="prod3" class="form-control"
-                    (ngModelChange)="goTo('item3', compareForm.get('item3').value)"
+            <select id="prod3" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Selecciona Producto 2 para habilitar este campo"
+                    
                     formControlName="item3">
                 <option value="">Selecciona Producto</option>
                 <option *ngFor="let item of products$ | async" [value]="item.id">{{item.name}}</option>
             </select>
-            <router-outlet name="item3"></router-outlet>
+            <app-compared-item *ngIf="compareForm.get('item3').value!=''" [itemID]="compareForm.get('item3').value"></app-compared-item>
+            <!-- <router-outlet name="item3"></router-outlet> -->
         </div>
     </div>
 </form>
+

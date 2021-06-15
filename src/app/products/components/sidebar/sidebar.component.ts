@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { interval, Observable, Subject, Subscription } from 'rxjs';
-import { filter, map, switchMap, takeWhile, tap } from 'rxjs/operators';
+import { map, takeWhile } from 'rxjs/operators';
 import { Colors } from '../../models/colors';
 import { Item } from '../../models/item';
 import { Section } from '../../models/section';
@@ -114,7 +114,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   buttonClicked() {
     const element: HTMLElement = document.getElementById("sideBar"); //this.ref.nativeElement
-    if (element.clientWidth === this._stops[this.currentIndex][0]) {
+    
       this.toggleClass(element);
       this.interval$
         .pipe(
@@ -122,14 +122,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
           map(() => this.isIncreasing ? element.offsetWidth + 2 : element.offsetWidth - 2),
           map(width=> this.isIncreasing==false&&width==10 ? width-10 : width))
         .subscribe(width => this.renderer.setStyle(element, 'width', `${width}px`));
-    }
+    
 
     
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    const element: HTMLElement = document.getElementById("sideBar"); //this.ref.nativeElement
+    const element: HTMLElement = document.getElementById("sideBar");
     if(event.target.innerWidth>=990){
       this.renderer.removeAttribute(element, 'style');
       this.renderer.removeAttribute(element, 'class');
@@ -151,7 +151,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
       size: this.fb.group({
         34: false, 35: false, 36: false, 37: false,
         38: false, 39: false, 40: false, 41: false,
-        42: false, 43: false, 44: false, 48:false, 49:false
+        42: false, 43: false, 44: false, 48: false, 49: false,
       }),
       colors: this.fb.group({
         1: false, 2: false, 3: false, 4: false,
